@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="module_scope">
+        <item>com.android.systemui</item>
+        <item>miui.systemui.plugin</item>
+        <item>com.miui.home</item>
+    </string-array>
+
+    <string-array name="language_list">
+        <item>@string/follow_system</item>
+        <item>简体中文</item>
+        <item>English</item>
+    </string-array>
+
+    <string-array name="power_menu_style">
+        <item>Default</item>
+        <item>样式1</item>
+        <item>样式2</item>
+    </string-array>
+
+    <string-array name="media_background_style_entire">
+        <item>Default</item>
+        <item>Cover color</item>
+        <item>Cover</item>
+    </string-array>
+    
+    <array name="control_center_item_list">
+        <item>cards</item>
+        <item>media</item>
+        <item>brightness</item>
+        <item>volume</item>
+        <item>deviceControl</item>
+        <item>deviceCenter</item>
+        <item>list</item>
+        <item>edit</item>
+    </array>
+    <array name="control_center_item_list_name">
+        <item>Card Tile</item>
+        <item>Media Player</item>
+        <item>Brightness Bar</item>
+        <item>Volume Bar</item>
+        <item>Mi Home</item>
+        <item>Xiaomi Smart Hub</item>
+        <item>Standard Tile</item>
+        <item>Edit</item>
+    </array>
+    <string-array name="card_list">
+        <item>wifi</item>
+        <item>cell</item>
+        <item>bt</item>
+        <item>settings</item>
+        <item>airplane</item>
+        <item>autobrightness</item>
+        <item>hotspot</item>
+        <item>nfc</item>
+        <item>gps</item>
+        <item>mute</item>
+        <item>vibrate</item>
+        <item>screenshot</item>
+        <item>flashlight</item>
+        <item>rotation</item>
+        <item>screenlock</item>
+        <item>scanner</item>
+        <item>papermode</item>
+        <item>night</item>
+        <item>quietmode</item>
+        <item>batterysaver</item>
+        <item>aitranslate</item>
+        <item>aisubtitles</item>
+        <item>wirelesspower</item>
+        <item>dolbyatomssound</item>
+        <item>custom(com.milink.service/com.milink.ui.service.MiLinkTileService)</item>
+        <item>custom(com.miui.mishare.connectivity/.tile.MiShareTileService)</item>
+        <item>
+            custom(com.miui.securitycenter/com.miui.superpower.notification.SuperPowerTileService)
+        </item>
+        <item>custom(com.android.camera/com.xiaomi.camera.videocast.VideoCastTileService)</item>
+    </string-array>
+    <array name="card_tile_name">
+        <item>WLAN</item>
+        <item>Mobile networks</item>
+        <item>Bluetooth</item>
+        <item>Settings</item>
+        <item>Airplane mode</item>
+        <item>Auto brightness</item>
+        <item>Hotspot</item>
+        <item>NFC</item>
+        <item>Location</item>
+        <item>Mute</item>
+        <item>Vibrate</item>
+        <item>Screenshot</item>
+        <item>Flashlight</item>
+        <item>Lock orientation</item>
+        <item>Lock screen</item>
+        <item>Scanner</item>
+        <item>Reading mode</item>
+        <item>Dark mode</item>
+        <item>DND</item>
+        <item>Battery saver</item>
+        <item>Mi AI Translate</item>
+        <item>AI subtitles</item>
+        <item>Reverse wireless charging</item>
+        <item>Dolby Atoms</item>
+        <item>Cast</item>
+        <item>Mi Share</item>
+        <item>Ultra battery saver</item>
+        <item>Dual phone</item>
+    </array>
+    <string-array name="color_mode_items">
+        <item>System</item>
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
+    <string-array name="is_local_speaker_entire">
+        <item>Default</item>
+        <item>Device name</item>
+    </string-array>
+    <string-array name="is_super_blur_entire">
+        <item>Default</item>
+        <item>Force off</item>
+        <item>Force on</item>
+    </string-array>
+
+    <string-array name="is_list_label_mode_entire">
+        <item>Default</item>
+        <item>Inside</item>
+        <item>Custom</item>
+    </string-array>
+
+    <string-array name="edit_background_mode_entire">
+        <item>Separate</item>
+        <item>Global</item>
+    </string-array>
+
+    <string-array name="seekbar_value_style_entire">
+        <item>Percentage</item>
+        <item>Actual value</item>
+    </string-array>
+    <string-array name="qs_list_tile_color_for_state_entire">
+        <item>Default</item>
+        <item>Follow the icon</item>
+        <item>Custom</item>
+    </string-array>
+    <string-array name="land_rightOrLeft_entire">
+        <item>Left panel</item>
+        <item>Right panel</item>
+    </string-array>
+
+</resources>

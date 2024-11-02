@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="blue">#2856FF</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="class_name_color">#8C93B0</color>
+    <color name="sec_color">#30000000</color>
+
+    <color name="tab_bg_color">#FFF0F0F0</color>
+    <color name="card_background">#803e3e3e</color>
+    <color name="miui_volume_color_btn_seleted">#3482ff</color>
+    <color name="miui_timer_text_color">#ccffffff</color>
+    <color name="miui_volume_color_accent">#f7ffffff</color>
+    <color name="miui_volume_bg_color">#40e3e3e3</color>
+    <!--    <color name="miui_volume_divider">#0000000</color>-->
+</resources>
