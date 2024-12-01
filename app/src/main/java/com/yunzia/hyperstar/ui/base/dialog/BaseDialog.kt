@@ -1,4 +1,4 @@
-package com.yunzia.hyperstar.ui.base
+package com.yunzia.hyperstar.ui.base.dialog
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.CubicBezierEasing
@@ -37,7 +37,7 @@ fun ShowDialog(
 /**
  * Dismiss the dialog.
  */
-private fun dismissDialog() {
+fun dismissDialog() {
     isDialogShowing.value = false
 }
 

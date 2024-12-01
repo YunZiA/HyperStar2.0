@@ -35,9 +35,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.fontscaling.MathUtils.lerp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
-import androidx.core.graphics.toColor
 import androidx.core.graphics.toColorInt
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import com.yunzia.hyperstar.PagerList
 import com.yunzia.hyperstar.R
 import com.yunzia.hyperstar.ui.base.LinearImage
@@ -76,7 +76,7 @@ private fun getColorList(
 @Composable
 fun ThirdPage(
     activity: ComponentActivity,
-    navController: NavController,
+    navController: NavHostController,
     topAppBarScrollBehavior: ScrollBehavior,
     padding: PaddingValues,
     showBlurs: MutableState<Boolean>,
@@ -231,9 +231,14 @@ fun ThirdPage(
                     url = "http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&amp;k=5ONF7LuaoQS6RWEOUYBuA0x4X8ssvHJp&amp;authKey=Pic4VQJxKBJwSjFzsIzbJ50ILs0vAEPjdC8Nat4zmiuJRlftqz9%2FKjrBwZPQTc4I&amp;noverify=0&amp;group_code=810317966"
                 )
                 SuperIntentArrow(
-                    title = "Telegram",
+                    title = stringResource(R.string.telegram_channel),
                     navController = navController,
-                    url = "https://t.me/+QQWVM0ToHyEyZmRl"
+                    url = "https://t.me/HyperStar_release"
+                )
+                SuperIntentArrow(
+                    title = stringResource(R.string.telegram_group),
+                    navController = navController,
+                    url = "https://t.me/Hyperstar_chat"
                 )
 
             }
