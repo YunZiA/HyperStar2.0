@@ -82,11 +82,11 @@ android {
 
 dependencies {
     // 系统UI控制库，实现沉浸式状态栏
-    implementation("com.google.accompanist:accompanist-systemuicontroller:0.31.0-alpha")
+    implementation(libs.accompanist.systemuicontroller)
 
     implementation(libs.gson)
     implementation(libs.androidx.navigation.compose)
-    implementation("com.github.skydoves:cloudy:0.2.3")
+    implementation(libs.cloudy)
     implementation(libs.haze)
     //implementation ("com.android.support:palette-v7:29.0.0")
 
