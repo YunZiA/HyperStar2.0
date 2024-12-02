@@ -9,8 +9,6 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 
-import org.json.JSONException;
-
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -33,18 +31,17 @@ public class SPUtils {
 
     /**
      * 初始化
-     * @param context
+     * @param context android context to access Shared Preferences
      */
     public void init(Context context) {
-        sp = context.getSharedPreferences("HyperStar_SP", Context.MODE_WORLD_READABLE);
-
+        sp = context.getSharedPreferences("HyperStar_SP", Context.MODE_PRIVATE);
     }
 
     /**
      * 下面的是读取数据
-     * @param key
-     * @param def
-     * @return
+     * @param key key of the preference
+     * @param def default value of the preference
+     * @return the string
      */
     public static String getString(String key, String def) {
         if(SPUtils.getInstance().sp == null){
@@ -68,6 +65,7 @@ public class SPUtils {
         return SPUtils.getInstance().sp.getFloat(key, def);
     }
 
+    /** @noinspection unused*/
     public static long getLong(String key, long def) {
         if(SPUtils.getInstance().sp == null){
             return def;
@@ -83,9 +81,9 @@ public class SPUtils {
 
     /**
      * 下面是保存数据
-     * @param key
-     * @param v
-     * @return
+     * @param key key of the preference
+     * @param v value to set
+     * @return true if the preference is changed
      */
     public static boolean setString(String key, String v) {
         if(SPUtils.getInstance().sp == null){
@@ -134,28 +132,45 @@ public class SPUtils {
         Log.d("SPUtils", "Key: " + allEntries);
 
         String type  = "SPUtils";
-        //ArrayList<SP> sputils = new ArrayList<>();
-        //JSONObject json = new JSONObject();
 
         for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
             String key = entry.getKey();
             Object value = entry.getValue();
-            if (value instanceof String) {
-                sputils.add(new SP(type,key,SP.type_string,value));
-            } else if (value instanceof Integer) {
-                sputils.add(new SP(type,key,SP.type_int,value));
-            } else if (value instanceof Boolean) {
-                sputils.add(new SP(type,key,SP.type_boolean,value));
-            } else if (value instanceof Float) {
-                sputils.add(new SP(type,key,SP.type_float,value));
-            } else if (value instanceof Long) {
-                sputils.add(new SP(type,key,SP.type_long,value));
-            } else {
-                sputils.add(new SP(type,key,SP.type_string,value));
+            switch (value) {
+                case Integer i -> sputils.add(new SP(type, key, SP.type_int, i));
+                case Boolean b -> sputils.add(new SP(type, key, SP.type_boolean, b));
+                case Float v -> sputils.add(new SP(type, key, SP.type_float, v));
+                case Long l -> sputils.add(new SP(type, key, SP.type_long, l));
+                /// String or default or null
+                case null, default -> sputils.add(new SP(type, key, SP.type_string, value));
             }
         }
-        //return gson.toJsonTree(sputils,new TypeToken<ArrayList<SP>>() {}.getType());
 
+    }
+
+
+    /** @noinspection unused*/
+    public static JsonElement getAllPreferencesAsJsonElement(ArrayList<SP> preferencesUtil) {
+        SharedPreferences pref = PreferencesUtil.getInstance().sp;
+        Map<String, ?> allEntries = pref.getAll();
+
+        String type  = "PreferencesUtil";
+        Gson gson = new Gson();
+
+        for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+            Log.d("SharedPref", "Key: " + key + ", Value: " + value.toString());
+
+            switch (value) {
+                case Integer i -> preferencesUtil.add(new SP(type, key, SP.type_int, i));
+                case Boolean b -> preferencesUtil.add(new SP(type, key, SP.type_boolean, b));
+                case Float v -> preferencesUtil.add(new SP(type, key, SP.type_float, v));
+                case Long l -> preferencesUtil.add(new SP(type, key, SP.type_long, l));
+                default -> preferencesUtil.add(new SP(type, key, SP.type_string, value));
+            }
+        }
+        return gson.toJsonTree(preferencesUtil,new TypeToken<ArrayList<SP>>() {}.getType());
     }
 
 

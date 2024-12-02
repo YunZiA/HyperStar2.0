@@ -92,15 +92,14 @@ object JBUtil {
     }
 
 
-    fun readJsonFile(filePath: String?): String {
+    private fun readJsonFile(filePath: String): String {
         val sb = StringBuilder()
         try {
             val file = File(filePath)
-            var `in`: InputStream? = null
-            `in` = FileInputStream(file)
-            var tempbyte: Int
-            while ((`in`.read().also { tempbyte = it }) != -1) {
-                sb.append(tempbyte.toChar())
+            val `in`: InputStream = FileInputStream(file)
+            var tempByte: Int
+            while ((`in`.read().also { tempByte = it }) != -1) {
+                sb.append(tempByte.toChar())
             }
             `in`.close()
         } catch (e: Exception) {
